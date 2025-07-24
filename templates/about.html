@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <style>
+        .nav1 {
+          background-image: url({% static 'images/warehouse.jpg'%});
+          background-size: cover;
+          background-position: center;
+          height: 50vh;
+          position: relative;
+        }
+        .nav-link.active {
+            color: red !important;
+            font-weight: bold;
+            border-bottom: 2px solid red;
+        }
+        .content h2{
+            margin-left:60px;
+            padding-top:180px;
+            color:white;
+            font-weight:bold;
+        }
+        .hero-section {
+          padding: 40px 0;
+          background: linear-gradient(to bottom, #f9f9f9, #fff);
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        .hero-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: 1200px;
+          margin: auto;
+          flex-wrap: wrap;
+          gap: 40px;
+          padding: 20px;
+        }
+
+        .hero-image img {
+          max-width: 500px;
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .hero-content h1 {
+          font-size: 36px;
+          font-weight: 700;
+          color: #111;
+          margin-bottom: 20px;
+        }
+
+        .hero-content p {
+          font-size: 16px;
+          line-height: 1.6;
+          color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo-img">
+
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link " href="/">HOME</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/about_us">ABOUT US</a></li>
+        <li class="nav-item"><a class="nav-link" href="/why_us">WHY US</a></li>
+        <li class="nav-item"><a class="nav-link" href="/services">SERVICES</a></li>
+        <li class="nav-item"><a class="nav-link" href="/careers">CAREERS</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact_us">CONTACT US</a></li>
+      </ul>
+    </div>
+
+    <button class="get-quote-btn">Track</button>
+  </div>
+</nav>
+<div class="nav1">
+  <div class="content"><h2>About Us</h2></div>
+</div>
+
+<!---About section --->
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-image">
+      <img src="{% static 'images/about.jpg' %}" alt="Warehouse Image">
+    </div>
+    <div class="hero-content">
+      <h1>Welcome To Ceejay Courier</h1>
+      <p>
+        At Ceejay Courier, we are committed to delivering excellence in logistics and transportation.
+        With our headquarters in Kochi, Kerala, we provide efficient courier services nationwide.
+        From express parcel deliveries to warehouse management and vehicle logistics,
+        Ceejay Courier stands for reliability, speed, and customer satisfaction.
+      </p>
+    </div>
+  </div>
+</section>
+<!---Service section --->
+<section class="services-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Ceejay Courier Services</h2>
+      <p class="section-subtitle">Reliable, Fast, and Nationwide Delivery Solutions Tailored for You</p>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <div class="service-card shadow-sm p-4 bg-white rounded">
+          <div class="icon mb-3"><img src="{% static 'logos/truck.avif' %}" alt="Express Service" width="60"></div>
+          <h5 class="service-title">Speed Express Delivery</h5>
+          <p class="service-desc">Get your packages delivered swiftly across cities with real-time tracking and updates.</p>
+          <a href="#" class="service-link">→ View Service</a>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="service-card shadow-sm p-4 bg-white rounded">
+          <div class="icon mb-3"><img src="{% static 'logos/warehouse.jpg' %}" alt="Warehouse" width="60"></div>
+          <h5 class="service-title">Warehouse Solutions</h5>
+          <p class="service-desc">Well-equipped warehouses across Kerala to store, manage, and dispatch consignments efficiently.</p>
+          <a href="#" class="service-link">→ View Service</a>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="service-card shadow-sm p-4 bg-white rounded">
+          <div class="icon mb-3"><img src="{% static 'logos/document.avif' %}" alt="Passenger Transport" width="60"></div>
+          <h5 class="service-title">Document Handling</h5>
+          <p class="service-desc">Secure and quick delivery of legal, business, and personal documents with proof of delivery.</p>
+          <a href="#" class="service-link">→ View Service</a>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="service-card shadow-sm p-4 bg-white rounded">
+          <div class="icon mb-3"><img src="{% static 'logos/vehicle.webp' %}" alt="Vehicle Transport" width="60"></div>
+          <h5 class="service-title">Vehicle Logistics</h5>
+          <p class="service-desc">Specialized transportation for two-wheelers and small vehicles across state borders.</p>
+          <a href="#" class="service-link">→ View Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!---Footer section--->
+<section>
+  <footer class="footer">
+  <div class="footer-left">
+    <h3>Contact Us</h3>
+    <p>Ceejay Courier Pvt. Ltd.</p>
+    <p>123 Logistics Street, Kochi, Kerala, 682001</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Email: support@ceejaycourier.com</p>
+  </div>
+
+  <div class="footer-middle">
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="/about_us">About Us</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/careers">Career</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-right">
+    <img src="logo.png" alt="Ceejay Courier Logo" class="footer-logo" />
+    <h3>Ceejay Courier</h3>
+    <p>Reliable and fast courier services across India with a strong commitment to customer satisfaction.</p>
+  </div>
+</footer>
+
+</section>
+
+</body>
+</html>
