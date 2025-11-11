@@ -6,20 +6,25 @@
 {% block content %}
 
 <!-- Hero Video Section -->
-<section class="courier-section">
-  <video autoplay muted loop playsinline class="courier-video">
+<section class="position-relative text-white">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline class="w-100" style="object-fit: cover; height: 100vh;">
     <source src="{% static 'videos/courier.mp4' %}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <div class="courier-overlay">
-    <div class="courier-content">
-      <h1>Experience <span style="font-weight:300;">Quality Service</span></h1>
-      <p>
+
+  <!-- Overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(0, 0, 0, 0.5);">
+    <div class="container text-center px-3">
+      <h1 class="display-4 fw-bold mb-3">
+        Experience <span class="fw-light">Quality Service</span>
+      </h1>
+      <p class="lead mb-4">
         At Ceejay Express Courier, our commitment to excellence drives everything we do.
         We focus on speed, reliability, and customer satisfaction to ensure every delivery meets the highest standards.
         With us, your parcels are in trusted hands — every time, on time.
       </p>
-      <a href="/about_us" class="btn">About Us</a>
+      <a href="/about_us" class="about-btn btn-lg px-4">About Us</a>
     </div>
   </div>
 </section>
