@@ -1,70 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ceejay Courier-Home</title>
-  {% load static %}
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/main.css'%}">
-</head>
-<body>
+{% extends "base.html" %}
+{% load static%}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block content %}
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
-    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo-img">
-
-    <div class="collapse navbar-collapse justify-content-center">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/" style="color:white">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about_us">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link" href="/why_us">WHY US</a></li>
-        <li class="nav-item"><a class="nav-link" href="/services">SERVICES</a></li>
-        <li class="nav-item"><a class="nav-link" href="/careers">CAREERS</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact_us">CONTACT US</a></li>
-      </ul>
-    </div>
-
-    <button class="get-quote-btn">Track</button>
-  </div>
-</nav>
-
-<!-- Carousel -->
-<div id="courierCarousel" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{% static 'images/delivery.jpg' %}" class="d-block w-100" alt="Slide 1">
-      <div class="carousel-caption">
-        <h1>Experience <span style="font-weight:300;">Quality Service</span></h1>
-        <p>At Ceejay Express Courier, our commitment to excellence drives everything we do. We focus on speed, reliability, and customer satisfaction to ensure every delivery meets the highest standards. With us, your parcels are in trusted hands — every time, on time.</p>
-        <a href="/about_us" class="btn">About Us</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'images/men.jpg' %}" class="d-block w-100" alt="Slide 2">
-      <div class="carousel-caption">
-        <h1>Driven by Dedication, <span style="font-weight:300;">Delivered with Precision</span></h1>
-        <p>Behind every successful delivery is a team that plans, coordinates, and moves with purpose. At Ceejay Express Courier, our commitment to excellence begins on the ground—with people who care about every mile.</p>
-        <a href="/about_us" class="btn">About Us</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="{% static 'images/warehouse.jpg' %}" class="d-block w-100" alt="Slide 3">
-      <div class="carousel-caption">
-        <h1>Smart Storage <span style="font-weight:300;">for Swift Delivery</span></h1>
-        <p>Efficient storage is the backbone of reliable delivery. At Ceejay Express Courier, our well-organized warehouses ensure your packages are safe, secure, and ready for dispatch at a moment’s notice.</p>
-        <a href="/services" class="btn">View Services</a>
-      </div>
+<!-- Hero Video Section -->
+<section class="courier-section">
+  <video autoplay muted loop playsinline class="courier-video">
+    <source src="{% static 'videos/courier.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="courier-overlay">
+    <div class="courier-content">
+      <h1>Experience <span style="font-weight:300;">Quality Service</span></h1>
+      <p>
+        At Ceejay Express Courier, our commitment to excellence drives everything we do.
+        We focus on speed, reliability, and customer satisfaction to ensure every delivery meets the highest standards.
+        With us, your parcels are in trusted hands — every time, on time.
+      </p>
+      <a href="/about_us" class="btn">About Us</a>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#courierCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#courierCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
+</section>
+
 <!-- About Us Section -->
 <section class="about-section py-5" style="background-color: #f9f9f9;">
   <div class="container">
@@ -76,7 +35,7 @@
 
       <!-- Right Side Text -->
       <div class="col-md-6 pl-md-2">
-        <h2 class="mb-3" style="font-weight: 700;"><span style="color:red;">10+</span> years of excellence in Courier Field</h2>
+        <h2 class="mb-3" style="font-weight: 700;"><span style="color:red;">20+</span> years of excellence in Courier Field</h2>
         <p style="font-size: 1.1rem; line-height: 1.8;font-family: 'Poppins', sans-serif;">
           With over a decade of unwavering commitment to excellence, <strong>Ceejay Express Courier</strong> has established itself as one of Kerala’s most trusted and reliable courier service providers. For more than <strong>10 years</strong>, we have been delivering not just consignments, but <em>peace of mind</em> — backed by a strong network, experienced team, and a customer-first approach.
         </p>
@@ -86,7 +45,7 @@
         <p style="font-size: 1.1rem; line-height: 1.8;font-family: 'Poppins', sans-serif;">
           From urban hubs to rural corners, Ceejay Express Courier continues to deliver with <strong>precision, reliability, and care</strong> — because for us, every delivery matters.
         </p>
-        <a href="/about_us"><button class="btn btn-custom mt-3">About Us</button></a>
+        <a href="/about_us"><button class="about-btn mt-3">About Us</button></a>
       </div>
     </div>
   </div>
@@ -149,38 +108,4 @@
     </div>
   </div>
 </section>
-<!------Footer section ------->
-<section>
-  <footer class="footer">
-  <div class="footer-left">
-    <h3>Contact Us</h3>
-    <p>Ceejay Courier Pvt. Ltd.</p>
-    <p>123 Logistics Street, Kochi, Kerala, 682001</p>
-    <p>Phone: +91 98765 43210</p>
-    <p>Email: support@ceejaycourier.com</p>
-  </div>
-
-  <div class="footer-middle">
-    <h3>Quick Links</h3>
-    <ul>
-      <li><a href="/about_us">About Us</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="#">Career</a></li>
-    </ul>
-  </div>
-
-  <div class="footer-right">
-    <img src="logo.png" alt="Ceejay Courier Logo" class="footer-logo" />
-    <h3>Ceejay Courier</h3>
-    <p>Reliable and fast courier services across India with a strong commitment to customer satisfaction.</p>
-  </div>
-</footer>
-
-</section>
-
-
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% endblock %}

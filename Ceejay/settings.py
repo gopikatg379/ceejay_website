@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--4ikn=^@=0kuji2$w89t^+q^c#4tvq%p5l9^j=*0r%o=eo!z!u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gopikatg.pythonanywhere.com']
+ALLOWED_HOSTS = ['gopikatg.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition

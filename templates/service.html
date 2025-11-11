@@ -1,159 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% load static %}
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      <link rel="stylesheet" href="{% static 'css/main.css'%}">
-  <style>
-        .nav1 {
-          background-image: url({% static 'images/warehouse.jpg'%});
-          background-size: cover;
-          background-position: center;
-          height: 50vh;
-          position: relative;
-        }
-        .nav-link.active {
-            color: red !important;
-            font-weight: bold;
-            border-bottom: 2px solid red;
-        }
-        .content h2{
-            margin-left:60px;
-            padding-top:180px;
-            color:white;
-            font-weight:bold;
-        }
-        .hero-section {
-          padding: 40px 0;
-          background: linear-gradient(to bottom, #f9f9f9, #fff);
-          font-family: 'Segoe UI', sans-serif;
-        }
-
-        .hero-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          max-width: 1200px;
-          margin: auto;
-          flex-wrap: wrap;
-          gap: 40px;
-          padding: 20px;
-        }
-
-        .hero-image img {
-          max-width: 500px;
-          width: 100%;
-          height: auto;
-          border-radius: 8px;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .hero-content {
-          flex: 1;
-          min-width: 300px;
-        }
-
-        .hero-content h1 {
-          font-size: 36px;
-          font-weight: 700;
-          color: #111;
-          margin-bottom: 20px;
-        }
-
-        .hero-content p {
-          font-size: 16px;
-          line-height: 1.6;
-          color: #333;
-        }
-        .why-choose-us-section {
-          background-color: #004085;
-          padding: 60px 20px;
-          text-align: center;
-        }
-
-        .why-choose-container {
-          max-width: 1000px;
-          margin: 0 auto;
-        }
-
-        .why-choose-us-section h2 {
-          font-size: 2.2rem;
-          margin-bottom: 40px;
-          color: white;
-        }
-
-        .why-choose-features {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          gap: 30px;
-        }
-
-        .feature-item {
-          flex: 1 1 30%;
-          background-color: #f2f6ff;
-          border-radius: 12px;
-          padding: 25px 20px;
-          box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-          transition: transform 0.3s ease;
-        }
-
-        .feature-item:hover {
-          transform: translateY(-8px);
-        }
-
-        .feature-item img {
-          width: 60px;
-          height: 60px;
-          margin-bottom: 20px;
-        }
-
-        .feature-item h3 {
-          font-size: 1.2rem;
-          margin-bottom: 10px;
-          color: #0070f3;
-        }
-
-        .feature-item p {
-          font-size: 0.95rem;
-          color: #555;
-        }
-
-  </style>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
-    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo-img">
-
-    <div class="collapse navbar-collapse justify-content-center">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about_us">ABOUT US</a></li>
-        <li class="nav-item"><a class="nav-link" href="/why_us">WHY US</a></li>
-        <li class="nav-item"><a class="nav-link active" href="/services">SERVICES</a></li>
-        <li class="nav-item"><a class="nav-link" href="/careers">CAREERS</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact_us">CONTACT US</a></li>
-      </ul>
-    </div>
-
-    <button class="get-quote-btn">Track</button>
-  </div>
-</nav>
+{% extends "base.html" %}
+{% load static%}
+{% block content %}
 <div class="nav1">
   <div class="content"><h2>Services</h2></div>
 </div>
 <!---Service section --->
-<section class="hero-section">
-  <div class="hero-container">
-    <div class="hero-image">
+<section class="hero-section1">
+  <div class="hero-container1">
+    <div class="hero-image1">
       <img src="{% static 'images/delivery-man.jpg' %}" alt="Delivery man Image">
     </div>
-    <div class="hero-content">
+    <div class="hero-content1">
       <h1>Our Services at Ceejay Courier</h1>
       <p>
         Ceejay Courier offers a wide range of logistics services tailored to meet your needs.
@@ -169,17 +26,17 @@
   <div class="why-choose-container">
     <h2>Why Choose Ceejay Courier?</h2>
     <div class="why-choose-features">
-      <div class="feature-item">
+      <div class="feature-item1">
         <i class="fas fa-shipping-fast"></i>
         <h3>Lightning Fast Delivery</h3>
         <p>We guarantee fast and on-time delivery across urban and rural destinations.</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-item1">
         <i class="fas fa-shield-alt"></i>
         <h3>Safe & Secure Handling</h3>
         <p>Every parcel is handled with care using our secure packaging and transport systems.</p>
       </div>
-      <div class="feature-item">
+      <div class="feature-item1">
         <i class="fas fa-headset"></i>
         <h3>24/7 Customer Support</h3>
         <p>Our team is available anytime to assist you with tracking, queries, or help.</p>
@@ -232,32 +89,4 @@
     </div>
   </div>
 </section>
-<section>
-  <footer class="footer">
-  <div class="footer-left">
-    <h3>Contact Us</h3>
-    <p>Ceejay Courier Pvt. Ltd.</p>
-    <p>123 Logistics Street, Kochi, Kerala, 682001</p>
-    <p>Phone: +91 98765 43210</p>
-    <p>Email: support@ceejaycourier.com</p>
-  </div>
-
-  <div class="footer-middle">
-    <h3>Quick Links</h3>
-    <ul>
-      <li><a href="/about_us">About Us</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/careers">Career</a></li>
-    </ul>
-  </div>
-
-  <div class="footer-right">
-    <img src="logo.png" alt="Ceejay Courier Logo" class="footer-logo" />
-    <h3>Ceejay Courier</h3>
-    <p>Reliable and fast courier services across India with a strong commitment to customer satisfaction.</p>
-  </div>
-</footer>
-
-</section>
-</body>
-</html>
+{% endblock %}

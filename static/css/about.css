@@ -1,0 +1,43 @@
+
+.hero-section {
+  padding: 40px 0;
+  background: linear-gradient(to bottom, #f9f9f9, #fff);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+}
+
+.hero-image img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}

@@ -24,3 +24,6 @@ def why_us(request):
 
 def contact_us(request):
     return render(request, 'contact_us.html')
+
+def gallery(request):
+    return render(request,'gallery.html')
