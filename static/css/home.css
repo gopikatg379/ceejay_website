@@ -73,3 +73,47 @@
   color: #fff !important;
   text-decoration: none !important;
 }
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .service-desc {
+    font-size: 0.95rem;
+  }
+
+  .service-link {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .service-card img {
+    width: 50px;
+  }
+}
