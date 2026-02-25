@@ -478,14 +478,25 @@ flex-wrap: wrap;
     font-weight: bold;
 }
 
-.map-container{
-    width:300px;
-}
+
 .content-area {
     margin-bottom: 80px;   
     padding-top: 100px; 
 }
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
 
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .feature-box {

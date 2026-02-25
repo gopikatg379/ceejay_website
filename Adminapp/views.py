@@ -46,6 +46,7 @@ def track_result(request):
             "error": "Server configuration error (API key missing)"
         })
     print("API KEY:", os.environ.get("TRACKING_API_KEY"))
+    
     response = requests.get(
         aws_url,
         headers={"X-API-KEY": api_key},
