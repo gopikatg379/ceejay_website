@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <div class="card p-4 shadow">
+        <h3 class="mb-3">Track Your Consignment</h3>
+
+        <form action="{% url 'track_result' %}" method="get">
+            <input type="text" name="cn" class="form-control mb-3"
+                   placeholder="Enter Consignment Number" required>
+
+            <button type="submit" class="btn btn-danger w-100">
+                Track Now
+            </button>
+        </form>
+
+        {% if error %}
+            <div class="alert alert-danger mt-3">{{ error }}</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

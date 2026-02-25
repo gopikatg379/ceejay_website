@@ -25,5 +25,7 @@ urlpatterns = [
     path('careers',views.careers),
     path('why_us',views.why_us),
     path('contact_us',views.contact_us),
-    path('gallery',views.gallery)
+    path('gallery',views.gallery),
+    path("track/", views.track_page, name="track_page"),
+    path("track/result/", views.track_result, name="track_result"),
 ]
