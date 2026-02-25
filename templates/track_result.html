@@ -1,21 +1,150 @@
 {% extends "base.html" %}
-
 {% block content %}
+
+<style>
+.tracking-card {
+    border-radius: 12px;
+}
+
+.status-badge {
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 40px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #dee2e6;
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    z-index: 2;
+}
+
+.timeline-dot {
+    width: 18px;
+    height: 18px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    background: #dee2e6;
+}
+
+.timeline-step.completed .timeline-dot {
+    background: #198754;
+}
+
+.timeline-label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.timeline-date {
+    font-size: 11px;
+    color: #6c757d;
+}
+
+@media(max-width:768px){
+    .timeline {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .timeline::before {
+        display:none;
+    }
+    .timeline-step {
+        margin-bottom:20px;
+        text-align:left;
+    }
+}
+</style>
+
 <div class="container mt-5 pt-5">
-    <div class="card p-4 shadow">
 
-        <h3 class="mb-4">Tracking Details</h3>
+    <div class="card shadow tracking-card p-4">
 
-        <p><strong>Consignment:</strong> {{ data.cnote }}</p>
-        <p><strong>Status:</strong> {{ data.status }}</p>
-        <p><strong>Booking Branch:</strong> {{ data.booking_branch }}</p>
-        <p><strong>Delivery Branch:</strong> {{ data.delivery_branch }}</p>
-        <p><strong>Date:</strong> {{ data.date }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Tracking Details</h4>
+            <span class="badge bg-success status-badge">
+                {{ data.status }}
+            </span>
+        </div>
 
-        <a href="{% url 'track_page' %}" class="btn btn-secondary mt-3">
-            Track Another
-        </a>
+        <hr>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <strong>Consignment No:</strong> {{ data.cnote }}
+            </div>
+            <div class="col-md-6">
+                <strong>Date:</strong> {{ data.date }}
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <strong>Booking Branch:</strong> {{ data.booking_branch }}
+            </div>
+            <div class="col-md-6">
+                <strong>Delivery Branch:</strong> {{ data.delivery_branch }}
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+
+            <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Booked</div>
+                <div class="timeline-date">
+                    {{ data.booking_branch }}
+                </div>
+            </div>
+
+            <div class="timeline-step completed">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">In Transit</div>
+                <div class="timeline-date">
+                    Moving to {{ data.delivery_branch }}
+                </div>
+            </div>
+
+            <div class="timeline-step {% if data.status == 'DELIVERED' %}completed{% endif %}">
+                <div class="timeline-dot"></div>
+                <div class="timeline-label">Delivered</div>
+                <div class="timeline-date">
+                    {% if data.status == "DELIVERED" %}
+                        Completed
+                    {% else %}
+                        Pending
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'track_page' %}" class="btn btn-secondary">
+                Track Another
+            </a>
+        </div>
 
     </div>
+
 </div>
+
 {% endblock %}
