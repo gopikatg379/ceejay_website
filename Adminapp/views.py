@@ -39,11 +39,17 @@ def track_result(request):
 
     aws_url = f"https://ceejaycourier.mysmeclabs.com/staff/api/track/{cn_number}/"
 
+    api_key = os.environ.get("TRACKING_API_KEY")
+
+    if not api_key:
+        return render(request, "track_page.html", {
+            "error": "Server configuration error (API key missing)"
+        })
+
     response = requests.get(
         aws_url,
-        headers={
-            "X-API-KEY": os.environ.get("TRACKING_API_KEY")
-        }
+        headers={"X-API-KEY": api_key},
+        timeout=10
     )
     print("STATUS:", response.status_code)
     print("RESPONSE:", response.text)
