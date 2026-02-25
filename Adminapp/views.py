@@ -32,7 +32,7 @@ def track_page(request):
 
 
 def track_result(request):
-    cn_number = request.GET.get("cn")
+    cn_number = request.GET.get("cn", "").strip().replace(" ", "")
 
     if not cn_number:
         return render(request, "track_page.html", {"error": "Enter CN number"})
@@ -45,7 +45,8 @@ def track_result(request):
             "X-API-KEY": os.environ.get("TRACKING_API_KEY")
         }
     )
-
+    print("STATUS:", response.status_code)
+    print("RESPONSE:", response.text)
     if response.status_code == 200:
         data = response.json()
         return render(request, "track_result.html", {"data": data})
