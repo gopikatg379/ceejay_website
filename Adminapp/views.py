@@ -45,12 +45,13 @@ def track_result(request):
         return render(request, "track_page.html", {
             "error": "Server configuration error (API key missing)"
         })
-
+    print("API KEY:", os.environ.get("TRACKING_API_KEY"))
     response = requests.get(
         aws_url,
         headers={"X-API-KEY": api_key},
         timeout=10
     )
+
     print("STATUS:", response.status_code)
     print("RESPONSE:", response.text)
     if response.status_code == 200:
